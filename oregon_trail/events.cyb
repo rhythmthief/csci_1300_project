@@ -1,0 +1,117 @@
+#Each event is an ordered series of actions and dialogue outputs. The function in the Trail object will loop from 0 to the length of this array and call up conditions and print messages in a linear fashion (so the party gets attacked by wolves, passes a check, a message is printed, then it finds a treasure, passes a check, a message is printed and so on)
+
+#Prompt types:
+#0 - Skip
+#1 - Yes
+#2 - No
+#3 - Free response
+#45678 -- Shop goods
+#9 -- Reset shop
+#10 -- Complete purchase
+#11 -- Leave shop
+#12 -- Move forward
+#13 -- Rest
+#14 -- Hunt
+#15 -- Run from raiders
+#16 -- Attack raiders
+#17 -- Surrender to raiders
+
+
+#Available actions (called by an integer):
+#0 -- None (print message)
+#1 -- Set character name
+#2 -- Edit resource quantity
+#3 -- Shop
+#4 -- Move forward
+
+#2 -- Raiders
+#3 -- Wolves
+#4 -- Hunting
+#8 -- Break wagon
+#9 -- Repair wagon
+#10 -- Death
+
+eventStart
+New Beginnings
+0*0*0
+0*0*0*Be sure to adjust your terminal emulator window to accommodate at least 40 lines of text. This story features elements coined by David Brin in his 1985 novel "The Postman." The original author has given his blessing to this project through email correspondence. When you are ready to embark of your perilous journey, follow the on-screen prompt.
+0*0*0*You’ve always dreaded that this day would come.
+0*0*0*You were born some 30 years ago in a place which used to be known as St. Louis, Missouri. None of its past glory persevered through the Last War, same as everywhere else in the world.
+0*0*0*You were just a child when the first bombs fell, but you can still remember the deafening buzz of the EMP blasts that followed. Two hundred people of St. Louis are still around, sustaining the pretense of a functioning society.
+0*0*0*“I can’t stay,” you utter to your family. “The Mayor won’t stop till I’m six feet under.” The details of your crime no longer matter.
+0*0*0*“We are coming with you,” your family replies almost in unison.
+0*0*0*You’ve got a plan: there’s been word of a young nation calling itself the “Restored United States of America” spanning over what used to be Oregon and California. Everyone you know says that it’s too good to be true, but you’ve seen something they haven’t.
+0*0*0*While hunting in the forest several months ago, you ran into a man posing as a postman of the fabled nation. It wasn’t the first time you’d seen a lunatic, but that one carried a portable radio giving off a barely audible hiss.
+0*0*0*The thing is, no electronics survived the EMP blasts. It’s been over twenty years since the last time your apartment’s wiring transmitted an electrical current. The place which the postman had come from holds the promise of a better life.
+0*0*0*Your grandfather’s faded map reveals a place called Oregon City, circled by a decades-old coffee stain. It is 2,040 miles away. The task seems impossible at first, but then you consider the only alternative you've got: becoming the next victim of your settlement’s self-proclaimed Mayor.
+0*0*0*You are having trouble concentrating and decide to take things one step at a time. 
+1*3*0*Can you remember your name?
+0*0*0*Who are you taking with you? Choose wisely. Each person you take is an extra mouth to feed, and they may perish along the way.
+1*1,2*0*Will you take your spouse?
+1*3*0*What is their name?
+1*1,2*0*What about your first child?
+1*3*0*What is their name?
+1*1,2*0*Are you taking the second child?
+1*3*0*What is their name?
+1*1,2*0*Is your first parent coming with you?
+1*3*0*What is their name?
+1*1,2*0*What about your second parent?
+1*3*0*What is their name?
+2*0*21200*Next, you'll need to buy a wagon, oxen and supplies for the road. There's only one store left in your settlement, and the owner is now known for fair prices. Your family puts together a total of $1200 for the journey.
+0*0*0*You enter the poorly lit room which used to belong to a local bank, the only object giving it away being a rusty call bell. You don't get a chance to ring it, however, as the room owner's dog has already announced your arrival with a barrage of otherworldly shrieks, not unlike those of an ever-hungry hyena. The shopkeeper lazily goes behind the counter.
+0*0*0*You attempt to haggle with him. "Final offer. Take it or leave it," he eventually grumbles, referring to the wagon, as a drop of sweat goes down the side of his face and into the bushy, unkempt beard. 
+2*0*2-200*You obediently count off $200 and hand over the bills. The shopkeeper doesn't realize that you've bargained a price less than half of what he originally wanted.
+2*0*0100*"The wagon's waiting for you outside," he tiredly mutters. "I take it you're going somewhere. I'd buy two oxen too, if I were you, unless you wanna pull the wagon yourself." You consider his advice. "By the way, the Mayor's been here earlier, says he's looking for you."
+0*0*0*Your right hand slowly reaches for the gun holstered on your hip. "Take it easy," the shopkeeper breathes out without flinching. "I don't like him any more than you do. Don't know where you're going and honestly I don't care, but you should stock up on food too. Take a look around and tell me when you're ready to buy something else."
+0*0*0*You let go of the gun.
+0*0*0*Your latest acquisition -- the wagon -- comes with a single yoke, and the shopkeeper waves you off when you ask if he could sell you another one. It means that you won't have use for more than two oxen.
+3*4,5,6,7,8,9,10,11*1*The shopkeeper grumbles. "All right, let me give you a hint. As I was saying, you'll need oxen to pull your wagon, I suggest you buy two now, that's as many as you can have. You should get around 200lbs of food per person. They say that you are a good shot, get some bullets for the road too, you'll need them to hunt and keep the dangers away. Medkits will help you treat wounds and diseases along the way. I've also got parts you could use to repair the wagon, the roads aren't quite what they used to be in my days." The man's eyes betray a slight glimmer of excitement. You assume that he's just happy that you're leaving. In reality, however, he would have given anything to come with you.
+0*0*0*It is March 1st, 2027. You have to reach Oregon City before November 30th, otherwise you'll perish in the frozen expanse. You decide to lay low and figure out your next step. One of your family members, lamenting on the old days, suggests that you should leave on March 28th. You estimate that you can stay in hiding until May 1st without wasting any of the resources you've purchased.
+4*1,2*0*Would you like to leave on March 28th?
+0*0*0*The day of your departure has arrived. You take a deep breath, pack your possessions and set out. "Welcome to the Oregon Trail," you inadvertently whisper.
+eventEnd
+
+eventStart
+The Oregon Trail
+5*12,13,14,18*0*Would you like to move forward or set up a camp and rest for a few days?
+eventEnd
+
+eventStart
+End of the Line
+6*0*0*None
+eventEnd
+
+eventStart
+Raiders
+7*15,16,17*0*You spot an approaching raiding party. You've got mere seconds to contemplate the course of action.
+eventEnd
+
+eventStart
+Fort
+3*4,5,6,7,8,9,10,11*1.25*You are approaching a modest fort and wonder how anyone could live there. You decide to visit the local general store.
+eventEnd
+
+eventStart
+Fort
+3*4,5,6,7,8,9,10,11*1.5*You are approaching a modest fort and wonder how anyone could live there. You decide to visit the local general store.
+eventEnd
+
+eventStart
+Fort
+3*4,5,6,7,8,9,10,11*1.75*You are approaching a modest fort and wonder how anyone could live there. You decide to visit the local general store.
+eventEnd
+
+eventStart
+Fort
+3*4,5,6,7,8,9,10,11*2*You are approaching a modest fort and wonder how anyone could live there. You decide to visit the local general store.
+eventEnd
+
+eventStart
+Fort
+3*4,5,6,7,8,9,10,11*2.25*You are approaching a modest fort and wonder how anyone could live there. You decide to visit the local general store.
+eventEnd
+
+eventStart
+Fort
+3*4,5,6,7,8,9,10,11*2.5*You are approaching a modest fort and wonder how anyone could live there. You decide to visit the local general store.
+eventEnd

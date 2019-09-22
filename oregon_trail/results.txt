@@ -1,0 +1,2 @@
+Name	Travelled	Money	Oxen	Bullets	Food	Dead
+Jack	501mi	$324.75		2	0	416lbs	4
